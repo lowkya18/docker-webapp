@@ -1,3 +1,4 @@
+```xml
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -230,7 +231,17 @@
                 </executions>
             </plugin>
 
+            <!-- SonarQube -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>5.1.0.4751</version>
+            </plugin>
+
         </plugins>
     </build>
 
 </project>
+```
+
+After updating this file, push it to GitHub and run the Jenkins pipeline again. The `mvn sonar:sonar` command should now recognize the `sonar` prefix.
